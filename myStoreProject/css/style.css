@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -25,7 +25,7 @@
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -71,6 +71,10 @@ li {
 
 .navbar {
   background-color: var(--green-dark);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 50px;
 }
 
 .navbar .wrapper-main {
@@ -92,11 +96,27 @@ li {
   display: block;
   color: var(--white);
   font-weight: 300;
-  padding: 18px 4px;
+  padding: 15px 4px;
 }
 
 .navbar a:hover {
   background-color: var(--green-dark-hover);
+}
+
+my arrow {
+  position: absolute;
+  content: "";
+  border-left: 1px solid var(--green-light);
+  border-bottom: 1px solid var(--green-light);
+  width: 5px;
+  height: 5px;
+  right: -5px;
+  bottom: 7px;
+  -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+          transform: rotate(315deg);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .nav__list {
@@ -144,6 +164,80 @@ li {
   display: block;
 }
 
+.header__burger {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: auto 20px;
+  cursor: pointer;
+}
+
+.header__burger::before,
+.header__burger::after {
+  position: absolute;
+  content: "";
+  background-color: var(--green-light);
+  width: 100%;
+  height: 5px;
+  left: 0;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__burger::before {
+  top: 0;
+}
+
+.header__burger::after {
+  bottom: 0;
+}
+
+.header__burger.active .bureger__line {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.header__burger.active::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 11px;
+}
+
+.header__burger.active::after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 12px;
+}
+
+.bureger__line {
+  position: absolute;
+  background-color: var(--green-light);
+  width: 100%;
+  height: 4px;
+  top: 42%;
+  left: 0;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.burger {
+  display: none;
+}
+
+.bureger__line {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: var(--green-light);
+  left: 0;
+}
+
 .vertical-line {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   min-height: 100%;
@@ -172,7 +266,7 @@ li {
 .logi-variant::before {
   position: absolute;
   content: "";
-  top: 18px;
+  top: 14px;
   left: -16px;
   background-image: url(../img/login-ico.svg);
   background-repeat: no-repeat;
@@ -210,12 +304,54 @@ p.hey {
   color: rebeccapurple;
 }
 
+@media screen and (max-width: 1190px) {
+  nav {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .nav__list {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .nav__list {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 976px) {
+  .burger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 760px) {
+  body.lock {
+    overflow: hidden;
+  }
+
   span.hey {
     font-size: 30px;
   }
 
   p.hey {
     color: gray;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .vertical-line {
+    display: none;
+  }
+
+  .user-login {
+    margin-left: 40px;
   }
 }

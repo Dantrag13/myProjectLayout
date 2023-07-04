@@ -1,5 +1,7 @@
 .navbar {
   background-color: var(--green-dark);
+  display: flex;
+  max-height: 50px;
 }
 
 .navbar .wrapper-main {
@@ -13,11 +15,24 @@
   display: block;
   color: var(--white);
   font-weight: 300;
-  padding: 18px 4px;
+  padding: 15px 4px;
 
   &:hover {
     background-color: var(--green-dark-hover);
   }
+}
+
+my arrow {
+  position: absolute;
+  content: "";
+  border-left: 1px solid var(--green-light);
+  border-bottom: 1px solid var(--green-light);
+  width: 5px;
+  height: 5px;
+  right: -5px;
+  bottom: 7px;
+  transform: rotate(315deg);
+  transition: all .5s ease 0s;
 }
 
 .nav__list {
@@ -25,6 +40,14 @@
   flex-wrap: wrap;
   flex-direction: row;
   gap: 46px;
+
+  @media screen and (max-width: 1100px) {
+    gap: 30px;
+  }
+
+  @media screen and (max-width: 1020px) {
+    gap: 20px;
+  }
 }
 
 .nav__list .nav__submenu__list:hover {
@@ -59,11 +82,93 @@
   }
 }
 
-.nav__item a {}
+.header__burger {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: auto 20px;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    background-color: var(--green-light);
+    width: 100%;
+    height: 5px;
+    left: 0;
+    border-radius: 20px;
+    transition: all 0.3s ease 0s;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &.active .bureger__line {
+    transform: scale(0);
+  }
+
+  &.active::before {
+    transform: rotate(45deg);
+    top: 11px;
+  }
+
+  &.active::after {
+    transform: rotate(-45deg);
+    bottom: 12px;
+  }
+}
+
+.bureger__line {
+  position: absolute;
+  background-color: var(--green-light);
+  width: 100%;
+  height: 4px;
+  top: 42%;
+  left: 0;
+  border-radius: 20px;
+  transition: all 0.3s ease 0s;
+}
+
+.burger {
+  display: none;
+
+  @media screen and (max-width: 976px) {
+    display: block;
+  }
+}
+
+.bureger__line {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: var(--green-light);
+  left: 0;
+}
+
+nav {
+  @media screen and (max-width: 1190px) {
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: 976px) {
+    display: none;
+  }
+}
 
 .vertical-line {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   min-height: 100%;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .user-login {
@@ -71,6 +176,10 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+
+  @media screen and (max-width: 600px) {
+    margin-left: 40px;
+  }
 }
 
 .logi-variant {
@@ -80,7 +189,7 @@
   &::before {
     position: absolute;
     content: '';
-    top: 18px;
+    top: 14px;
     left: -16px;
     background-image: url(../img/login-ico.svg);
     background-repeat: no-repeat;
