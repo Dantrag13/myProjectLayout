@@ -36,7 +36,9 @@ html {
   --green-dark-hover: #347153;
   --green-light: #84C551;
   --brown-red: #8C3213;
+  --color-search: #484848;
   --white: #FFFFFF;
+  --black: #000000;
 }
 
 body,
@@ -74,7 +76,7 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: 50px;
+  height: 50px;
 }
 
 .navbar .wrapper-main {
@@ -101,22 +103,6 @@ li {
 
 .navbar a:hover {
   background-color: var(--green-dark-hover);
-}
-
-my arrow {
-  position: absolute;
-  content: "";
-  border-left: 1px solid var(--green-light);
-  border-bottom: 1px solid var(--green-light);
-  width: 5px;
-  height: 5px;
-  right: -5px;
-  bottom: 7px;
-  -webkit-transform: rotate(315deg);
-      -ms-transform: rotate(315deg);
-          transform: rotate(315deg);
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
 }
 
 .nav__list {
@@ -314,6 +300,160 @@ my arrow {
   padding: 0 8px;
 }
 
+.search-cart-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.header__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin-left: 30px;
+}
+
+.header__form__input {
+  width: 342px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 32px;
+  outline: none;
+  padding: 0px 50px 0px 22px;
+  color: var(--color-search);
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header__form__button {
+  position: absolute;
+  border: none;
+  background: transparent;
+  right: 18px;
+  top: 12px;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 12px;
+}
+
+.header__phones__container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 20px;
+  padding: 10px;
+  gap: 10px;
+  top: 8px;
+  left: 576px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__phones__container:hover {
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header__phones__container:hover a:nth-child(3),
+.header__phones__container:hover a:nth-child(4) {
+  display: block;
+}
+
+.phones__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.phones__group a {
+  color: var(--black);
+}
+
+.phones__group a:nth-child(2) {
+  margin-top: 5px;
+  color: var(--green-light);
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.phones__group a:nth-child(3) {
+  margin-top: 20px;
+  display: none;
+}
+
+.phones__group a:nth-child(4) {
+  margin-top: 20px;
+  display: none;
+}
+
+.header__icons_groupe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 420px;
+  gap: 10px;
+}
+
+.cart__total {
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.header__icon__item {
+  position: relative;
+  display: block;
+}
+
+.header__icons__counter {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: var(--green-light);
+  color: var(--white);
+  font-size: 0.625rem;
+}
+
+.weighter-counter {
+  top: 16px;
+  right: 132px;
+}
+
+.cart-conter {
+  top: 16px;
+  right: 82px;
+}
+
 h1.hey {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -352,6 +492,10 @@ p.hey {
 }
 
 @media screen and (max-width: 976px) {
+  .navbar a {
+    font-size: 1.125rem;
+  }
+
   .burger {
     display: block;
   }
