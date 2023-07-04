@@ -50,15 +50,11 @@ my arrow {
   }
 }
 
-.nav__list .nav__submenu__list:hover {
-  height: 200px;
-}
-
 .nav__submenu__list {
   display: none;
   position: absolute;
   left: 0;
-  top: 54px;
+  top: 49px;
   background-color: var(--green-dark-hover);
   min-width: 222px;
   border-radius: 0 0 20px 20px;
@@ -77,9 +73,36 @@ my arrow {
 .dropdownd-menu {
   position: relative;
 
+  &::after {
+    position: absolute;
+    content: "";
+    border-left: 2px solid var(--green-light);
+    border-bottom: 2px solid var(--green-light);
+    width: 8px;
+    height: 8px;
+    right: -12px;
+    bottom: 22px;
+    transform: rotate(315deg);
+    transition: all .5s ease 0s;
+  }
+
+  &:hover {
+    background-color: var(--green-dark-hover);
+  }
+
   &:hover .nav__submenu__list {
     display: block;
   }
+
+  &:hover::after {
+    transform: rotate(135deg);
+    bottom: 18px;
+  }
+
+}
+
+.dropdownd-menu:hover .dropdownd-menu::after {
+  transform: rotate(200deg);
 }
 
 .header__burger {
