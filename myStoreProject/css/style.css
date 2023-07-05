@@ -37,6 +37,7 @@ html {
   --green-light: #84C551;
   --brown-red: #8C3213;
   --color-search: #484848;
+  --orange: #E74E13;
   --white: #FFFFFF;
   --black: #000000;
 }
@@ -362,6 +363,7 @@ li {
 .header__phones__container:hover {
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--white);
 }
 
 .header__phones__container:hover a:nth-child(3),
@@ -452,6 +454,64 @@ li {
 .cart-conter {
   top: 16px;
   right: 82px;
+}
+
+.markets-sections {
+  margin-top: 24px;
+}
+
+.markets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.market__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  width: 202px;
+  height: 40px;
+  border: 1px solid var(--green-dark);
+  border-radius: 50px;
+}
+
+.market__link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.market__link span {
+  color: var(--black);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.market__link:hover {
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+.market__link:hover span {
+  color: var(--white);
+}
+
+.market__link:hover path {
+  fill: var(--white);
 }
 
 h1.hey {

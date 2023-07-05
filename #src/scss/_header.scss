@@ -228,7 +228,6 @@ nav {
 .search-cart-bar {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
   margin-top: 20px;
   position: relative;
 }
@@ -277,6 +276,7 @@ nav {
 
   &:hover {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
   }
 
   &:hover a:nth-child(3),
@@ -355,3 +355,56 @@ nav {
 
 
 ///////////header 3 section ///////////
+
+
+
+.markets-sections {
+  margin-top: 24px;
+}
+
+.wrapper-main {}
+
+.markets {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.market__item {}
+
+.market__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 202px;
+  height: 40px;
+  border: 1px solid var(--green-dark);
+  border-radius: 50px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  span {
+    color: var(--black);
+    font-size: .875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background-color: var(--orange);
+    border-color: var(--orange);
+  }
+
+  &:hover span {
+    color: var(--white);
+  }
+
+  &:hover path {
+    fill: var(--white);
+  }
+
+}
