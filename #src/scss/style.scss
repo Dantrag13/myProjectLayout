@@ -13,30 +13,6 @@
 @import "_body";
 @import "_header";
 @import "_maininternertshop";
-
-
-
-h1.hey {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    color: green;
-}
-
-
-span.hey {
-    font-size: 20px;
-
-    @media screen and (max-width: 760px) {
-        font-size: 30px;
-    }
-}
-
-
-p.hey {
-    color: rebeccapurple;
-
-    @media screen and (max-width: 760px) {
-        color: gray;
-    }
-}
+@import "_mainaboutus";
+@import "_seedfooteraddon";
+@import "_footer";
