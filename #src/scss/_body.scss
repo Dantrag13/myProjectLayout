@@ -6,6 +6,7 @@ html {
   --brown-red: #8C3213;
   --color-search: #484848;
   --orange: #E74E13;
+  --peach-bg: rgba(140, 50, 19, .06);
 
   --white: #FFFFFF;
   --black: #000000;
@@ -51,6 +52,11 @@ h5 {
   font-size: 1.125rem;
 }
 
+h6 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 // .style-gradient-spot1 {
 //   position: absolute;
 //   content: '';
@@ -92,4 +98,29 @@ li {
 .wrapper-main {
   width: 1124px;
   margin: 0 auto;
+}
+
+.title__2leaves {
+  display: inline-block;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/grenn-style-ico.svg);
+    width: 32px;
+    height: 25px;
+    top: 20px;
+  }
+
+  &::before {
+    left: -50px;
+  }
+
+  &::after {
+    right: -50px;
+    transform: scaleX(-1);
+  }
+
 }
