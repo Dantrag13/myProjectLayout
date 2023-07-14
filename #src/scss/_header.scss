@@ -40,6 +40,18 @@
   @media screen and (max-width: 1020px) {
     gap: 20px;
   }
+
+  @media screen and (max-width: 976px) {
+    flex-direction: column;
+    padding: 20px 0px 0px 0px;
+    background-color: var(--green-dark);
+    max-width: 320px;
+    gap: 10px;
+
+    & a {
+      padding-left: 20px;
+    }
+  }
 }
 
 .nav__submenu__list {
@@ -55,11 +67,26 @@
   &:hover .dropdownd-menu {
     background-color: var(--green-dark-hover);
   }
+
+  @media screen and (max-width: 976px) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--green-dark);
+    width: 100%;
+    gap: 10px;
+    border-radius: 0 0 0 0;
+  }
 }
 
 .nav__submenu__item>a {
   padding-left: 20px;
   border-radius: 20px;
+
+  @media screen and (max-width: 976px) {
+    border-radius: 0px;
+    padding-left: 20px;
+  }
 }
 
 .dropdownd-menu {
@@ -76,14 +103,27 @@
     bottom: 22px;
     transform: rotate(315deg);
     transition: all .5s ease 0s;
+
+    @media screen and (max-width: 976px) {
+      display: none;
+    }
   }
 
   &:hover {
     background-color: var(--green-dark-hover);
+
+    @media screen and (max-width: 976px) {
+      background-color: var(--green-dark);
+    }
+
   }
 
   &:hover .nav__submenu__list {
     display: block;
+
+    @media screen and (max-width: 976px) {
+      display: flex;
+    }
   }
 
   &:hover::after {
@@ -173,7 +213,22 @@ nav {
   }
 
   @media screen and (max-width: 976px) {
-    display: none;
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    margin-left: 0px;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+
+    &.active {
+      transform: translateX(0);
+    }
   }
 }
 

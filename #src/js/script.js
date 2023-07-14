@@ -1,29 +1,28 @@
-function smoothScroll() {
+function buregrMenuHandle() {
   const burgerItem = document.querySelector('.burger');
   const menu = document.querySelector('nav');
   const body = document.querySelector('body');
 
-  const menuLinks = document.querySelectorAll('.header__list');
-
+  const menuLinks = document.querySelectorAll('.nav__item, .nav__submenu__item');
 
   burgerItem.addEventListener('click', (e) => {
-    // console.log(window.innerWidth);
     burgerItem.classList.toggle('active');
+    menu.classList.toggle('active');
     body.classList.toggle('lock');
   });
-  // menuCloseItem.addEventListener('click', () => {
-  //   menu.classList.remove('header__nav_active');
-  // });
-  if (window.innerWidth < 768) {
-    console.log(menuLinks);
+
+  if (window.innerWidth < 976) {
     for (let i = 0; i < menuLinks.length; i++) {
       menuLinks[i].addEventListener('click', () => {
-        menu.classList.remove('header__nav_active');
+        menu.classList.remove('active');
+        body.classList.remove('lock');
+        burgerItem.classList.remove('active');
+
       });
     }
   }
 };
-smoothScroll();
+buregrMenuHandle();
 ////////////////////////////// start for rpoductpage //////////////////////////////
 
 // const body = document.querySelector('body');
@@ -48,10 +47,6 @@ smoothScroll();
 // });
 
 ////////////////////////////// end for rpoductpage //////////////////////////////
-
-const seiperr = document.querySelector('.product__inner__swiper-container');
-console.log(seiperr);
-
 
 let product_swiper2 = new Swiper('.product__inner__swiper-container2', {
   loop: true,
