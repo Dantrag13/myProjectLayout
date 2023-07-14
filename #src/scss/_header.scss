@@ -229,7 +229,7 @@ nav {
 ///////////header 2 section ///////////
 
 .wrapper-main-second {
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1150px) {
     width: auto;
   }
 }
@@ -237,7 +237,7 @@ nav {
 .search-cart-bar {
   display: flex;
   align-items: center;
-  // justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
   position: relative;
 
@@ -275,7 +275,7 @@ nav {
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: 30px;
+  // margin-left: 30px;
 
   @media screen and (max-width: 1140px) {
     margin-left: 20px;
@@ -301,6 +301,14 @@ nav {
   @media screen and (max-width: 998px) {
     width: 300px;
   }
+
+  @media screen and (max-width: 908px) {
+    width: 200px;
+  }
+
+  @media screen and (max-width: 861px) {
+    width: 320px;
+  }
 }
 
 .header__form__button {
@@ -313,14 +321,23 @@ nav {
   padding-left: 12px;
 }
 
+.header__phones__style__wrapper {
+  position: relative;
+  min-width: 284px;
+
+  @media screen and (max-width: 861px) {
+    display: none;
+  }
+}
+
 .header__phones__container {
   position: absolute;
   display: flex;
   border-radius: 20px;
   padding: 10px;
   gap: 10px;
-  top: 8px;
-  left: 576px;
+  top: -32px;
+  // left: 576px;
   transition: all 0.3s ease 0s;
 
   &:hover {
@@ -333,24 +350,25 @@ nav {
     display: block;
   }
 
-  @media screen and (max-width: 1140px) {
-    left: 530px;
-  }
+  // @media screen and (max-width: 1140px) {
+  //   left: 530px;
+  // }
 
-  @media screen and (max-width: 998px) {
-    left: 440px;
-    top: -4px;
-  }
+  // @media screen and (max-width: 998px) {
+  //   left: 440px;
+  //   top: -4px;
+  // }
 
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
+  // @media screen and (max-width: 900px) {
+  //   display: none;
+  // }
 }
 
 .phones__group {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  flex-grow: 1;
 
   & a {
     color: var(--black);
@@ -378,20 +396,20 @@ nav {
 .header__icons_groupe {
   display: flex;
   align-items: center;
-  margin-left: 420px;
+  // margin-left: 420px;
   gap: 10px;
   position: relative;
 
   @media screen and (max-width: 1140px) {
-    margin-left: 300px;
+    // margin-left: 300px;
   }
 
   @media screen and (max-width: 900px) {
-    margin-left: 256px;
+    // margin-left: 256px;
   }
 
   @media screen and (max-width: 860px) {
-    margin-left: 0px;
+    // margin-left: 0px;
   }
 }
 
