@@ -1,4 +1,4 @@
-.products-store__wrapper {
+.wrapper-main.products-store__wrapper {
   padding: 50px 0px;
   text-align: center;
 
@@ -53,15 +53,12 @@
   @media screen and (max-width: 880px) {
     position: fixed;
     top: 0;
-    // bottom: 0;
     left: 0;
-    // right: 0;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     z-index: 10;
-    // display: none;
     transition: all 0.05s ease;
     transform: translateX(-100%);
 
@@ -78,7 +75,6 @@
   width: 256px;
   min-width: 216px;
   flex-grow: 0;
-  // border: 1px solid black;
   background-color: var(--white);
   border-radius: 20px;
   margin-top: 52px;
@@ -138,11 +134,16 @@
   border: none;
   transform: rotate(270deg);
   cursor: pointer;
-  display: none;
+  visibility: hidden;
+  pointer-events: none;
   z-index: 1;
 
+  &:active {
+    transform: rotate(270deg);
+  }
+
   @media screen and (max-width: 880px) {
-    display: block;
+    visibility: visible;
   }
 }
 
@@ -186,47 +187,6 @@
     border-color: var(--green-light);
   }
 }
-
-// .form-control {
-//   // display: grid;
-//   // grid-template-columns: 1em auto;
-//   // gap: 0.5em;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   gap: 5px;
-// }
-
-// .product__filter__checkbox2 {
-//   // display: grid;
-//   // place-content: center;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   appearance: none;
-//   background: transparent;
-//   margin: 0;
-//   color: rgba(0, 0, 0, 0.5);
-//   width: 17px;
-//   height: 17px;
-//   border: 1px solid var(--gray-light);
-//   border-radius: 3px;
-//   transform: translateY(-0.075em);
-
-//   &::before {
-//     content: "";
-//     width: 0.65em;
-//     height: 0.65em;
-//     transform: scale(0);
-//     transition: 120ms transform ease-in-out;
-//     box-shadow: inset 1em 1em var(--green-light);
-//   }
-
-//   &:checked::before {
-//     transform: scale(1);
-//     border-color: var(--green-light);
-//   }
-// }
 
 .product__filter__name {}
 
@@ -286,6 +246,7 @@
   min-width: 240px;
   transition: all 0.3s ease;
   background-color: var(--white);
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -307,7 +268,15 @@
 
 .product__weights-ico {}
 
-.product__main-img {}
+.product__main-img__wrapper {
+  max-width: 98px;
+  max-height: 132px;
+  margin: 0 auto;
+}
+
+.product__main-img {
+  object-fit: fill;
+}
 
 .product__inner-container {
   position: relative;

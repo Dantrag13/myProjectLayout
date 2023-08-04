@@ -50,6 +50,10 @@ buregrMenuHandle();
 
 let product_swiper2 = new Swiper('.product__inner__swiper-container2', {
   loop: true,
+  allowTouchMove: false,
+  preventClicksPropagation: false,
+  preventClicks: false,
+  noSwiping: true,
   spaceBetween: 10,
   slidesPerView: 2,
   freeMode: true,
