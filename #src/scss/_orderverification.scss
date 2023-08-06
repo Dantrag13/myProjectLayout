@@ -355,6 +355,7 @@
 
 .order-verify__confirm__btn {
   border-radius: 20px;
+  border: 1px solid var(--orange);
   background-color: var(--orange);
   color: var(--white);
   font-weight: 700;
@@ -362,6 +363,10 @@
   padding: 16px;
   margin-top: 20px;
   outline: none;
-  border: none;
   width: 100%;
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--orange);
+  }
 }
